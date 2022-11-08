@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: magic-data
+    restart: always
+    image: postgres:latest
+    volumes:
+      - ../magic-data/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "jace"
+      POSTGRES_PASSWORD: "dragon"
+
+  magic-back:
+    env_file:
+      - ../magic-back/vars/app.env
+    image: magic-back
+    container_name: magic-back
+    restart: always
+    image: magic-back
+    ports:
+      - "8000:8000"

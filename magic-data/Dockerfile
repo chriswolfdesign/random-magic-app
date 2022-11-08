@@ -1,0 +1,4 @@
+FROM postgres
+
+ENV POSTGRES_PASSWORD dragon
+ENV POSTGRES_USER jace
