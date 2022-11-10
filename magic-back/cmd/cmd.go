@@ -83,9 +83,7 @@ func main() {
 			w.WriteHeader(http.StatusBadRequest)
 		}
 
-		fmt.Println(dragons)
-
-		w.Header().Set("Content-Type", "text/plain")
+		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(dragons)
 
 	})
